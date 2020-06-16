@@ -1,0 +1,58 @@
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+{% endblock %}
+
+<body>
+<nav>
+
+    <div class="navbar" >
+            <ul class="navbar-nav">
+                <a href="{{ path('home') }}">
+                    <img id="logoImg" src="/images/logo/HomelyV2.png" alt="Logo Homely">
+                </a>
+            </ul>
+            <div class="navbar-right">
+                <ul class="navbar-nav">
+                    <span style="padding-right: 2em;"><i class="fas fa-globe-americas"></i> <i class="fas fa-chevron-down"></i></span>
+                    <a href=""> Louer un bien</a>
+                    <a href=""> Acheter un bien</a>
+                    <a href=""> A propos</a>
+                </ul>
+                {%  if app.user %}
+                <ul class="navbar-nav">
+                    <div class="dropdown">
+                        <div id="userBlock" class="dropbtn" onclick="Dropdown()" >
+                            <span> {{ app.user.username }}</span>
+                            <img id="userImg" src="/images/Users/default_user.png" alt="Image Utilisateur Défault">
+                        </div>
+                        <div class="dropdown-content" id="UserDropdown">
+                            <a href="#">Éditer mon profil</a>
+                            <a href="{{ path('app_logout') }}" class="nav-link">Se déconnecter</a>
+                        </div>
+                    </div>
+                </ul>
+
+
+                {% else %}
+
+                <ul class="navbar-nav">
+                    <div id="nav-connect">
+                        <li class="nav-item">
+                            <a href="{{ path('app_login') }}" class="nav-link">Se connecter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ path('register') }}" class="nav-link">S'inscrire</a>
+                        </li>
+                    </div>
+
+                </ul>
+
+                {% endif %}
+
+            </div>
+    </div>
+</nav>
+<input type="search" id="search" name="search">
+<script src="/js/main.js"></script>
+</body>

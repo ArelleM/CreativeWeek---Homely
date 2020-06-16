@@ -1,0 +1,53 @@
+{# /app/templates/registration/register.html.twig #}
+{% block stylesheet %}
+
+{% endblock %}
+
+{% block body %}
+    <div >
+        <div >
+
+
+            <div>
+                {{ form_start(registrationForm, {'attr': {'class': 'validate-form'}}) }}
+                <span>
+						S'inscrire
+					</span>
+                <div class="validate-input">
+                    <span>Identifiant</span>
+                    {{ form_widget(registrationForm.username, {'attr': {'placeholder':'Votre identifiant..'}}) }}
+
+                </div>
+                <div class="validate-input">
+                    <span>Email</span>
+                    {{ form_widget(registrationForm.email, {'attr': {'placeholder':'Votre email..'}}) }}
+                </div>
+
+                <div class="validate-input">
+                    <span>Mot de passe</span>
+                    {{ form_widget(registrationForm.plainPassword.first, {'attr': {'placeholder':'*********'}}) }}
+                </div>
+                <div class="validate-input" >
+                    <span>Répétez le mot de passe</span>
+                    {{ form_widget(registrationForm.plainPassword.second, {'attr': {'placeholder':'*********'}}) }}
+                </div>
+
+                <div>
+                    <div>
+                        <div></div>
+                        <button type="submit">
+                            S'inscrire
+                        </button>
+                    </div>
+                    {{ form_end(registrationForm) }}
+                    <a href="{{ path('app_login') }}" >
+                        Se connecter
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
