@@ -1,0 +1,82 @@
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+{% endblock %}
+
+<body>
+<nav>
+
+    <div class="navbar" >
+        <ul class="navbar-ul">
+            <a href="{{ path('home') }}">
+                <img id="logoImg" src="/images/logo/HomelyV2.png" alt="Logo Homely">
+            </a>
+        </ul>
+        <div class="navbar-right">
+            <ul class="navbar-ul">
+                <span style="padding-right: 2em;"><i class="fas fa-globe-americas"></i> <i class="fas fa-chevron-down"></i></span>
+                <a class="cool-link" href="{{ path('locations') }}"> Louer un bien</a>
+                <a class="cool-link" href=""> Acheter un bien</a>
+                <a class="cool-link" href=""> A propos</a>
+            </ul>
+            {%  if app.user %}
+                <ul class="navbar-ul">
+                    <div class="dropdown">
+                        <div id="userBlock" class="dropbtn" onclick="Dropdown()" >
+                            <span> {{ app.user.username }}</span>
+                            <img id="userImg" src="/images/Users/default_user.png" alt="Image Utilisateur Défault">
+                        </div>
+                        <div class="dropdown-content" id="UserDropdown">
+                            <a href="#">Éditer mon profil</a>
+                            <a href="{{ path('app_logout') }}" class="nav-link">Se déconnecter</a>
+                        </div>
+                    </div>
+                </ul>
+
+
+            {% else %}
+
+                <ul class="navbar-nav">
+                    <div id="nav-connect">
+                        <li class="nav-item">
+                            <a class="cool-link" href="{{ path('app_login') }}" class="nav-link">Se connecter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="cool-link" href="{{ path('register') }}" class="nav-link">S'inscrire</a>
+                        </li>
+                    </div>
+
+                </ul>
+
+            {% endif %}
+
+        </div>
+    </div>
+</nav>
+<div class=" container bookingform">
+
+    <form class="form-inline w-100">
+        <label class="sr-only" for="inlineFormInputName2">Destination</label>
+        <input type="text" class="w-25 form-control form-control-lg mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Destination">
+
+        <label class="sr-only" for="inlineFormInputGroupUsername2">Date d'arrivée</label>
+        <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+            </div>
+            <input type="date" class="form-control form-control-lg" >
+        </div>
+        <label class="sr-only" for="inlineFormInputGroupUsername2">Date de départ</label>
+        <div class="input-group mb-2 mr-sm-5">
+            <div class="input-group-prepend">
+            </div>
+            <input type="date" class="form-control form-control-lg" >
+        </div>
+
+
+        <button type="submit" class="btn btn-primary mb-2">Rechercher</button>
+    </form>
+</div>
+<script src="/js/main.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+</body>

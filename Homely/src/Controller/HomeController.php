@@ -30,4 +30,15 @@ class HomeController extends AbstractController
         return $this->render('pages/index.html.twig');
 
     }
+
+    /**
+     * @Route("/locations", name="locations")
+     * @return Response
+     *
+     */
+    public function location(): Response
+    {
+        return $this->render('pages/location.html.twig');
+
+    }
 }
