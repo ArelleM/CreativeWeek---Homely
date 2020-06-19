@@ -1,0 +1,126 @@
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+{% endblock %}
+
+<body>
+<nav>
+
+    <div class="nav-bar" >
+        <ul class="navbar-ul">
+            <a href="{{ path('home') }}">
+                <img id="logoImg" src="/images/logo/HomelyV2.png" alt="Logo Homely">
+            </a>
+        </ul>
+        <div class="navbar-right">
+            <ul class="navbar-ul liens">
+                <span style="padding-right: 2em;"><i class="fas fa-globe-americas"></i> <i class="fas fa-chevron-down"></i></span>
+                <a class="cool-link" href="{{ path('locations') }}"> Louer un bien</a>
+                <a class="cool-link" href="{{ path('acheter') }}"> Acheter un bien</a>
+                <a class="cool-link" href="{{ path('apropos') }}"> A propos</a>
+            </ul>
+            {%  if app.user %}
+                <div class="card" id="userBlock">
+                    <div class="card-body user">
+                        <h5 class="card-text w-5">
+                            <span class="fa fa-folder-o"></span>
+                            <a href="#menu" data-toggle="collapse">
+                                <span> {{ app.user.username }}</span>
+                                <img id="userImg" src="/images/Users/default_user.png" alt="Image Utilisateur Défault">
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="menu" class="collapse">
+                        <div class="list-group ">
+                            <a href="#" class="text-white">Mon profil</a>
+                            <a href="{{ path('app_logout') }}" class="text-white pb-2">Se déconnecter</a>
+                        </div>
+                    </div>
+                </div>
+
+            {% else %}
+
+                <ul class="navbar-ul connexion">
+                    <div id="nav-connect">
+                        <li class="nav-item">
+                            <a class="cool-link connect" href="{{ path('app_login') }}" class="cool-link">Se connecter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="cool-link" href="{{ path('register') }}" class="cool-link">S'inscrire</a>
+                        </li>
+                    </div>
+
+                </ul>
+
+            {% endif %}
+
+        </div>
+    </div>
+</nav>
+<div class="container histoire-container">
+    <h1>Notre Histoire</h1>
+    <div class="histoire">
+    <p>Ayant vu que beaucoup de français se sont interrogés sur le sens de leur vie actuelle pendant le confinement, nous avons décidé de créer Homely.
+
+        C'est quoi exactement Homely ?
+
+        Homely c’est le site dédié pour changer de vie et de mode de vie. </p>
+
+        <p> trouvant des logements uniques et insolites aux quatre coins de la France et du globe, à essayer avant d‘acheter.
+
+            Notre mission est de vous prouver que tout est possible !</p>
+
+        <p>Avec Homely, vous avez accès des opportunités uniques ! Envie de changer de vie ? Envie d’acheter un bien complètement différent du vôtre ? Ou tout simplement envie de découvrir des concepts originaux ?</p>
+
+        <p>Homely a tout ce qu’il vous faut, de la vente à la location test, nous mettons tout en œuvre pour que votre expérience soit la meilleure possible.</p>
+
+        <p>Exotisme, découverte de concept, retour aux sources et à l’essentiel. Nous vous proposons des biens insolites et uniques et vous invitons à les essayer pour que vous puissiez imaginer votre vie autrement, la vie dont vous rêvez !</p>
+
+
+
+        <p>Si vous hésitez à franchir le pas sur ce bien qui vous fait de l’œil, louez-le ! Testez-le ! S'il vous convient et que vous l’achetez, nous vous remboursons votre location !</p>
+
+
+
+        <p>Alors avec Homely, pourquoi ne pas envisager cette nouvelle vie … TOUTE votre vie ?</p>
+        <div class="eggs">
+        </div>
+    </div>
+</div>
+<script src="/js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+<footer>
+    <div class="footer">
+        <div class="footerleft">
+            <img id="logoImg" src="/images/logo/HomelyV2.png" alt="Logo Homely">
+            <h6><i class="far fa-copyright"></i>2020 Tous droits réservés, Homely</h6>
+            <div class="social">
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="footerright">
+            <div class="footericon">
+                <i class="far fa-envelope"></i>
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="footercontact">
+                <div>
+                    <h4>  CONTACTEZ-NOUS</h4>
+                    <h6>contact@homely.fr</h6>
+                </div>
+                <div>
+                    <h4> NOTRE ADRESSE</h4>
+                    <h6>14 Avenue du Rhône</h6>
+                    <h6>74000 Annecy</h6>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</footer>

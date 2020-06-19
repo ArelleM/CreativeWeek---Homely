@@ -13,33 +13,37 @@
                 </a>
             </ul>
             <div class="navbar-right">
-                <ul class="navbar-ul">
+                <ul class="navbar-ul liens">
                     <span style="padding-right: 2em;"><i class="fas fa-globe-americas"></i> <i class="fas fa-chevron-down"></i></span>
                     <a class="cool-link" href="{{ path('locations') }}"> Louer un bien</a>
-                    <a class="cool-link" href=""> Acheter un bien</a>
-                    <a class="cool-link" href=""> A propos</a>
+                    <a class="cool-link" href="{{ path('acheter') }}"> Acheter un bien</a>
+                    <a class="cool-link" href="{{ path('apropos') }}"> A propos</a>
                 </ul>
                 {%  if app.user %}
-                <ul class="navbar-ul">
-                    <div class="dropdown">
-                        <div id="userBlock" class="dropbtn" onclick="Dropdown()" >
-                            <span> {{ app.user.username }}</span>
-                            <img id="userImg" src="/images/Users/default_user.png" alt="Image Utilisateur Défault">
+                    <div class="card" id="userBlock">
+                        <div class="card-body user">
+                            <h5 class="card-text w-5">
+                                <span class="fa fa-folder-o"></span>
+                                <a href="#menu" data-toggle="collapse">
+                                    <span> {{ app.user.username }}</span>
+                                    <img id="userImg" src="/images/Users/default_user.png" alt="Image Utilisateur Défault">
+                                </a>
+                            </h5>
                         </div>
-                        <div class="dropdown-content" id="UserDropdown">
-                            <a href="#">Éditer mon profil</a>
-                            <a href="{{ path('app_logout') }}" class="nav-link">Se déconnecter</a>
+                        <div id="menu" class="collapse">
+                            <div class="list-group ">
+                                <a href="#" class="text-white">Mon profil</a>
+                                <a href="{{ path('app_logout') }}" class="text-white pb-2">Se déconnecter</a>
+                            </div>
                         </div>
                     </div>
-                </ul>
-
 
                 {% else %}
 
-                <ul class="navbar-ul">
+                <ul class="navbar-ul connexion">
                     <div id="nav-connect">
                         <li class="nav-item">
-                            <a class="cool-link" href="{{ path('app_login') }}" class="cool-link">Se connecter</a>
+                            <a class="cool-link connect" href="{{ path('app_login') }}" class="cool-link">Se connecter</a>
                         </li>
                         <li class="nav-item">
                             <a class="cool-link" href="{{ path('register') }}" class="cool-link">S'inscrire</a>
@@ -55,23 +59,70 @@
 </nav>
 <div class="box">
     <div class="shape">
+        <h2>Bienvenue sur Homely !</h2>
         <h1>Quelle nouvelle vie vous ferait envie?</h1>
         <div class="textchange" id="textchange1">
             <h2>Un chalet sur l'eau ?</h2>
             <h5>Lac Barrière, Canada</h5>
+            <a href="#">
+                <button class="btn btn-primary decouverte">Découvrir ici</button>
+            </a>
         </div>
         <div class="textchange" id="textchange2">
             <h2>Une maison autonome ?</h2>
             <h5>Traputtun, îles Féroé</h5>
+            <a href="#">
+                <button class="btn btn-primary decouverte">Découvrir ici</button>
+            </a>
         </div>
         <div class="textchange" id="textchange3">
             <h2>Une maison en hauteur ?</h2>
             <h5>Mézos, France</h5>
+            <a href="#">
+                <button class="btn btn-primary decouverte">Découvrir ici</button>
+            </a>
         </div>
     </div>
     <div id="bkgimg" >
     </div>
 </div>
 
+
+
 <script src="/js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
+<footer>
+    <div class="footer">
+        <div class="footerleft">
+            <img id="logoImg" src="/images/logo/HomelyV2.png" alt="Logo Homely">
+            <h6><i class="far fa-copyright"></i>2020 Tous droits réservés, Homely</h6>
+            <div class="social">
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="footerright">
+            <div class="footericon">
+                <i class="far fa-envelope"></i>
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="footercontact">
+                <div>
+                    <h4>  CONTACTEZ-NOUS</h4>
+                    <h6>contact@homely.fr</h6>
+                </div>
+                <div>
+                    <h4> NOTRE ADRESSE</h4>
+                    <h6>14 Avenue du Rhône</h6>
+                    <h6>74000 Annecy</h6>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</footer>

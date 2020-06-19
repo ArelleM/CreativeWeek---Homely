@@ -1,0 +1,20 @@
+.histoire-container{
+    margin: 7% 30% 0 30%;
+    width: 45% !important;
+}
+.histoire p{
+    text-align: justify;
+}
+.histoire-container h1{
+    font-weight: 900;
+    color: #2a9f67;
+    text-align: center;
+    margin-bottom: 5%;
+}
+.eggs{
+    background-image: url("/images/homepage/Eggs.jpg");
+    height: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 5%;
+}

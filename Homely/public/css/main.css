@@ -1,9 +1,87 @@
 @import "home.css";
 @import "location.css";
+@import "login.css";
+@import "footer.css";
+@import "apropos.css";
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css";
 body{
-    margin: 0;
+    margin:0;
     font-family: 'Lato', sans-serif;
+    height: 100%;
 
+}
+.sidebar{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+.container-body{
+    margin: 3%;
+    display: inline-flex;
+    width: 90%;
+}
+
+.title {
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.card-block {
+    font-size: 1em;
+    position: relative;
+    margin: 0;
+    padding: 1em;
+    border: none;
+    border-top: 1px solid rgba(34, 36, 38, .1);
+    box-shadow: none;
+
+}
+.card {
+    font-size: 1em;
+    overflow: hidden;
+    padding: 5;
+    border: none;
+    border-radius: .28571429rem;
+    box-shadow: 0 1px 3px 0 #2a9f67, 0 0 0 1px #2a9f67;
+    margin-top:20px;
+    transition: 0.2s;
+}
+.card:hover{
+    transform: scale(1.1,1.1);
+    box-shadow: 1px 2px 4px 1px #2a9f67;
+}
+
+.carousel-indicators li {
+    border-radius: 100%;
+    width: 12px;
+    height: 12px;
+    background-color: #404040;
+}
+.carousel-indicators li {
+    border-radius: 100%;
+    width: 12px;
+    height: 12px;
+    background-color: #404040;
+}
+.carousel-indicators .active {
+    background-color: white;
+    max-width: 12px;
+    margin: 0 3px;
+    height: 12px;
+}
+.description-card{
+    display: flex;
+    justify-content: space-around;
+}
+h6 i{
+    color: #2a9f67;
+}
+h6{
+    font-weight: bold;
+}
+#mapid{
+    width: 80%;
+    height: 900px;
 }

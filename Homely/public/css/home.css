@@ -9,11 +9,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    width: 6em;
     border: solid 1px #2a9f67;
-    padding: 5px 9px;
-    margin-right: 2em;
     border-radius: 20px;
+}
+#userBlock:hover{
+    background-color: #2a9f67;
 }
 #userBlock:hover span{
     color: white;
@@ -24,6 +24,18 @@
 
 ul.navbar-ul li{
     list-style: none;
+}
+.liens{
+    margin-right: 4em;
+}
+.connect{
+    width: 5.7em;
+}
+nav .card-body{
+    padding: 0 !important;
+}
+nav .card{
+    margin-top: 0 !important;
 }
 #logoImg{
     width: 10em;
@@ -40,10 +52,10 @@ ul.navbar-ul li{
 }
 .nav-bar{
     display: inline-flex;
-    width: 100%;
+    width: 95%;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    background-color: white;
 }
 .navbar-right{
     display: inline-flex;
@@ -104,20 +116,20 @@ li.nav-item{
     background-color: inherit;
     font-family: inherit;
     margin: 0;
+    z-index: 5;
 }
 
 .dropdown:hover .dropbtn, .dropbtn:focus {
     background-color: #2a9f67;
-    color: white;
+    color: black;
 }
-
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 5;
 }
 
 .dropdown-content a {
@@ -157,6 +169,7 @@ li.nav-item{
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
     animation-play-state: running;
+    margin-top: 1%;
 }
 @keyframes bgChange {
     0%   {
@@ -179,9 +192,9 @@ li.nav-item{
         z-index: -1;
         background: url("/images/homepage/img2.jpg");
         height: 88%;
-        background-size: cover;
+        background-size: contain;
         background-repeat: no-repeat;
-        background-position-x: center;
+        background-position-x: right;
     }
     60%  {
         opacity: 0;
@@ -191,9 +204,9 @@ li.nav-item{
         z-index: -1;
         background: url("/images/homepage/img3.jpg");
         height: 88%;
-        background-size: cover;
+        background-size: contain;
         background-repeat: no-repeat;
-        background-position-x: center;
+        background-position-x: right;
     }
     100% {opacity: 0;
     }
@@ -341,8 +354,9 @@ li.nav-item{
     }
 }
 .textchange h2{
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
+    font-weight: 900;
 }
 .textchange h5{
     font-size: 1.5em;
@@ -350,10 +364,33 @@ li.nav-item{
 }
 .shape h1{
     color: #2a9f67;
-    font-size: 3.5rem;
-    font-weight: bold;
-    width: 500px;
+    font-size: 2.7rem;
+    font-weight: 900;
+    width: 450px;
     position: absolute;
-    top: 20%;
+    top: 25%;
     left: 5%;
+}
+.shape > h2{
+    color: #2a9f67;
+    font-size: 3rem;
+    font-weight: 900;
+    position: absolute;
+    top: 5%;
+    left: 30%;
+}
+.decouverte{
+    background-color: #2a9f67;
+    width: 200px;
+    border-radius: 100px !important;
+    height: 50px;
+    font-weight: bold;
+    background-color: #2a9f67 !important;
+    margin-top: 15px;
+    transition: 0.5s;
+}
+
+.decouverte:hover{
+    transform: scale(1.1,1.1);
+    box-shadow: 1px 2px 4px 1px #2a9f67;
 }
